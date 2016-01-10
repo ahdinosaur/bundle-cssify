@@ -5,7 +5,7 @@
 [![Downloads][downloads-image]][downloads-url]
 [![js-standard-style][standard-image]][standard-url]
 
-browserify transform to bundle content for `insert-css` into a css file
+browserify transform to extract css for `insert-css` into external css files
 
 ## what?
 
@@ -20,17 +20,21 @@ console.log("rainbows and sunshine")
 
 transform into
 
+```js
+// bundle.js
+console.log("rainbows and sunshine")
+```
+
+and
+
 ```css
-/* bundle.css */
+/* css/86bffed652227c2fc7321a8a.css */
 h1 {
   text-align: center;
 }
 ```
 
-```js
-// bundle.js
-console.log("rainbows and sunshine")
-```
+where each extracted css file will be named by the hash of its content.
 
 ## install
 
@@ -47,7 +51,7 @@ npm install --save bundle-cssify
 as a normal browserify transform:
 
 ```shell
-browserify entry.js -t [ bundle-cssify -o ./bundle.css ] > bundle.js
+browserify entry.js -t [ bundle-cssify -d ./css ] > bundle.js
 ```
 
 replace `-t` with `-g` to run as a global transform (where "the transform will operate on ALL files, despite whether they exist up a level in a `node_modules/` directory")
@@ -63,7 +67,7 @@ as a normal browserify transform:
   },
   "browserify": {
     "transform": [
-      ["bundle-cssify", { "output": "./bundle.css" } ]
+      ["bundle-cssify", { "directory": "./css" } ]
     ]
   }
 }

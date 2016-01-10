@@ -1,7 +1,7 @@
 {
   "name": "bundle-cssify",
-  "version": "1.0.3",
-  "description": "browserify transform to bundle content for `insert-css` into a css file",
+  "version": "2.0.0",
+  "description": "browserify transform to extract css for `insert-css` into external css files",
   "main": "index.js",
   "scripts": {
     "test": "standard && tape test/*.js"
@@ -20,7 +20,7 @@
     "bundle",
     "sheetify"
   ],
-  "author": "Mikey <michael.williams@enspiral.com> (http://dinosaur.os)",
+  "author": "Mikey <michael.williams@enspiral.com> (http://dinosaur.is)",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/sheetify/bundle-cssify/issues"
@@ -31,11 +31,14 @@
     "pump": "^1.0.1",
     "readable-stream": "^2.0.5",
     "resolve": "^1.1.6",
+    "run-parallel": "^1.1.4",
     "static-module": "^1.1.3"
   },
   "devDependencies": {
     "bl": "^1.0.0",
     "browserify": "^13.0.0",
+    "directory-to-object": "^1.1.1",
+    "rimraf": "^2.5.0",
     "standard": "^5.4.1",
     "tape": "^4.4.0"
   }

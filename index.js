@@ -5,6 +5,7 @@ var fs = require('fs')
 var resolve = require('resolve')
 var pump = require('pump')
 var fromString = require('from2-string')
+var crypto = require('crypto')
 
 module.exports = transform
 
@@ -18,10 +19,11 @@ function transform (filename, options) {
 
   options = options || {}
 
-  var output = options.output || options.out || options.o
-  if (output == null) {
-    throw new Error('bundle-css: expected `output`, `out`, or `o` option.')
+  var directory = options.directory || options.dir || options.d
+  if (directory == null) {
+    throw new Error('bundle-css: expected `directory`, `dir`, or `d` option.')
   }
+  directory = path.resolve(process.cwd(), directory)
 
   if (options.vars) {
     Object.keys(options.vars).forEach(function (key) {
@@ -30,24 +32,20 @@ function transform (filename, options) {
   }
 
   var sm = staticModule(
-    { 'insert-css': staticInsertCss },
+    { 'insert-css': bundleCss },
     { vars: vars, varModules: { path: path } }
   )
 
   return sm
 
-  function staticInsertCss (css, cssOptions) {
+  function bundleCss (css, cssOptions) {
     cssOptions = cssOptions || {}
-    cssOptions.basedir = cssOptions.basedir || basedir
 
     var pts = stream.PassThrough()
     var cssStream = fromString(css)
-    var outStream = output
-    if (typeof outStream === 'string') {
-      outStream = fs.createWriteStream(
-        path.join(process.cwd(), output)
-      )
-    }
+    var outStream = fs.createWriteStream(
+      path.join(directory, hash(css) + '.css')
+    )
 
     pts.write('null')
 
@@ -63,4 +61,11 @@ function transform (filename, options) {
   function resolver (p) {
     return resolve.sync(p, { basedir: path.dirname(filename) })
   }
+}
+
+function hash (content) {
+  return crypto.createHash('md5')
+    .update(content)
+    .digest('hex')
+    .slice(0, 24)
 }
