@@ -1,7 +1,7 @@
 {
   "name": "bundle-cssify",
   "version": "1.0.0",
-  "description": "browserify transform to bundle `insert-css` calls into a css file",
+  "description": "browserify transform to bundle content for `insert-css` into a css file",
   "main": "index.js",
   "scripts": {
     "test": "tape test/*.js"
