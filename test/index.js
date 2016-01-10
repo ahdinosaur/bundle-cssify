@@ -5,7 +5,7 @@ var browserify = require('browserify')
 var join = require('path').join
 var stream = require('readable-stream')
 
-test("basic transform", function (t) {
+test('basic transform', function (t) {
   var output = stream.PassThrough()
 
   t.plan(4)

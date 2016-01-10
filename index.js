@@ -17,7 +17,7 @@ function transform (filename, options) {
   }
 
   options = options || {}
-  
+
   var output = options.output || options.out || options.o
   if (output == null) {
     throw new Error('bundle-css: expected `output`, `out`, or `o` option.')
@@ -45,7 +45,7 @@ function transform (filename, options) {
     var outStream = output
     if (typeof outStream === 'string') {
       outStream = fs.createWriteStream(
-        path.join(process.cwd(), output)    
+        path.join(process.cwd(), output)
       )
     }
 
