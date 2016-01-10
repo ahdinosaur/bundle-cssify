@@ -1,0 +1,38 @@
+{
+  "name": "bundle-cssify",
+  "version": "1.0.0",
+  "description": "browserify transform to bundle `insert-css` calls into a css file",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sheetify/bundle-cssify.git"
+  },
+  "keywords": [
+    "css",
+    "browserify",
+    "browserify-transform",
+    "bundle",
+    "sheetify"
+  ],
+  "author": "Mikey <michael.williams@enspiral.com> (http://dinosaur.os)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sheetify/bundle-cssify/issues"
+  },
+  "homepage": "https://github.com/sheetify/bundle-cssify#readme",
+  "dependencies": {
+    "from2-string": "^1.1.0",
+    "pump": "^1.0.1",
+    "readable-stream": "^2.0.5",
+    "resolve": "^1.1.6",
+    "static-module": "^1.1.3"
+  },
+  "devDependencies": {
+    "bl": "^1.0.0",
+    "browserify": "^13.0.0",
+    "tape": "^4.4.0"
+  }
+}
