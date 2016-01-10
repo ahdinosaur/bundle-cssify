@@ -6,7 +6,7 @@ browserify transform to bundle content for `insert-css` into a css file
 
 given a file like
 
-```
+```js
 // entry.js
 var insertCss = require('insert-css')
 insertCss('h1 {\n  text-align: center;\n}')
