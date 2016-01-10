@@ -1,5 +1,10 @@
 # bundle-cssify
 
+[![stability][stability-image]][stability-url]
+[![NPM version][npm-image]][npm-url]
+[![Downloads][downloads-image]][downloads-url]
+[![js-standard-style][standard-image]][standard-url]
+
 browserify transform to bundle content for `insert-css` into a css file
 
 ## what?
@@ -63,3 +68,12 @@ as a normal browserify transform:
   }
 }
 ```
+
+[stability-image]: https://img.shields.io/badge/stability-experimental-orange.svg?style=flat-square
+[stability-url]: https://nodejs.org/api/documentation.html#documentation_stability_index
+[npm-image]: https://img.shields.io/npm/v/bundle-cssify.svg?style=flat-square
+[npm-url]: https://npmjs.org/package/bundle-cssify
+[downloads-image]: http://img.shields.io/npm/dm/bundle-cssify.svg?style=flat-square
+[downloads-url]: https://npmjs.org/package/bundle-cssify
+[standard-image]: https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat-square
+[standard-url]: https://github.com/feross/standard
