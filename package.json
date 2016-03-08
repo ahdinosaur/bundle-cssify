@@ -11,21 +11,20 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sheetify/bundle-cssify.git"
+    "url": "git+https://github.com/ahdinosaur/bundle-cssify.git"
   },
   "keywords": [
     "css",
     "browserify",
     "browserify-transform",
-    "bundle",
-    "sheetify"
+    "bundle"
   ],
   "author": "Mikey <michael.williams@enspiral.com> (http://dinosaur.is)",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/sheetify/bundle-cssify/issues"
+    "url": "https://github.com/ahdinosaur/bundle-cssify/issues"
   },
-  "homepage": "https://github.com/sheetify/bundle-cssify#readme",
+  "homepage": "https://github.com/ahdinosaur/bundle-cssify#readme",
   "dependencies": {
     "from2-string": "^1.1.0",
     "pump": "^1.0.1",
