@@ -5,6 +5,8 @@
 [![Downloads][downloads-image]][downloads-url]
 [![js-standard-style][standard-image]][standard-url]
 
+**superseded by [`css-extract`](https://github.com/stackcss/css-extract)**
+
 browserify transform to extract css for `insert-css` into external css files
 
 ## what?
