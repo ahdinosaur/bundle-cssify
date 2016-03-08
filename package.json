@@ -1,6 +1,6 @@
 {
   "name": "bundle-cssify",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "browserify transform to extract css for `insert-css` into external css files",
   "main": "index.js",
   "scripts": {
